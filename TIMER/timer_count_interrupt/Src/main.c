@@ -46,7 +46,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+uint16_t g_tick=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,7 +61,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim->Instance==TIM3)
    {
-		 HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+		 g_tick++;
+		 if(g_tick>=1000)
+      {
+				g_tick=0;
+				HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+			}		 
 	 }
 }
 /* USER CODE END 0 */
