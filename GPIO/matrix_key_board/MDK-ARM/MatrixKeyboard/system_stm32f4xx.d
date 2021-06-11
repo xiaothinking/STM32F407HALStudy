@@ -1,0 +1,30 @@
+matrixkeyboard\system_stm32f4xx.o: ../Core/Src/system_stm32f4xx.c
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Include/core_cm4.h
+matrixkeyboard\system_stm32f4xx.o: D:\Program Files\Soft\MDK\ARM\ARMCC\Bin\..\include\stdint.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_version.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Include/mpu_armv7.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+matrixkeyboard\system_stm32f4xx.o: ../Core/Inc/stm32f4xx_hal_conf.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+matrixkeyboard\system_stm32f4xx.o: D:\Program Files\Soft\MDK\ARM\ARMCC\Bin\..\include\stddef.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+matrixkeyboard\system_stm32f4xx.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
