@@ -16,8 +16,10 @@
 ////////////////////////////////////////////////////////////////////////////////// 	 
 
 /*下面的方式是通过直接操作库函数方式读取IO*/
-#define KEY0 		HAL_GPIO_ReadPin(KEY0_GPIO_Port,KEY0_Pin) //PE4
-#define KEY1 		HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin)	//PE3 
+#define KEY0 		HAL_GPIO_ReadPin(KEY0_GPIO_Port,KEY0_Pin)     //PE4
+#define KEY1 		HAL_GPIO_ReadPin(KEY1_GPIO_Port,KEY1_Pin)	    //PE3 
+#define KEY2 		HAL_GPIO_ReadPin(KEY2_GPIO_Port,KEY2_Pin)     //PE2
+#define WK_UP 	HAL_GPIO_ReadPin(KEY_UP_GPIO_Port,KEY_UP_Pin)	  //PA0
 
 
 #define KEY0_PRES 	1
@@ -25,6 +27,6 @@
 #define KEY2_PRES	  3
 #define WKUP_PRES   4
 
-u8 KEY_Scan(u8);  		//按键扫描函数	
+uint8_t KEY_Scan(uint8_t);  		//按键扫描函数	
 
 #endif

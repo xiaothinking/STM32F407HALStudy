@@ -78,8 +78,8 @@ int main(void)
 	uint8_t key=0;
 	uint16_t i=0;
 	uint8_t datatemp[TEXT_LENTH];
-	uint8_t datatempbuff[TEXT_LENTH];
   /* USER CODE END 1 */
+  
 
   /* MCU Configuration--------------------------------------------------------*/
 
@@ -123,17 +123,17 @@ int main(void)
        STMFLASH_Read(UPGRADE_START_ADDRESS,(uint32_t*)datatemp,SIZE);
 			 printf("read by word \r\n");
 	     HAL_UART_Transmit(&huart1 , datatemp, TEXT_LENTH, 0xFFFF);		 
-			 printf("\r\n");//插入换行
+			 printf("%s\r\n",datatemp);//插入换行
 		} 
 		if(key==KEY2_PRES)//KEY2按下,按照字节读取 读取读取字符串并显示
 		{
 			 for(i=0;i<TEXT_LENTH;i++)
         {
-					 datatempbuff[i]=STMFLASH_ReadByte(UPGRADE_START_ADDRESS+i);			    
+					 datatemp[i]=STMFLASH_ReadByte(UPGRADE_START_ADDRESS+i);			    
 				}
        printf("read by byte \r\n");
-	     HAL_UART_Transmit(&huart1 , datatempbuff, TEXT_LENTH, 0xFFFF);		 
-			 printf("\r\n");//插入换行
+	     HAL_UART_Transmit(&huart1 , datatemp, TEXT_LENTH, 0xFFFF);		 
+			 printf("%s\r\n",datatemp);//插入换行
 		} 
 		
 		i++;
@@ -156,11 +156,11 @@ void SystemClock_Config(void)
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /** Configure the main internal regulator output voltage
+  /** Configure the main internal regulator output voltage 
   */
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
-  /** Initializes the CPU, AHB and APB busses clocks
+  /** Initializes the CPU, AHB and APB busses clocks 
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
@@ -174,7 +174,7 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  /** Initializes the CPU, AHB and APB busses clocks
+  /** Initializes the CPU, AHB and APB busses clocks 
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
@@ -214,7 +214,7 @@ void Error_Handler(void)
   * @retval None
   */
 void assert_failed(uint8_t *file, uint32_t line)
-{
+{ 
   /* USER CODE BEGIN 6 */
   /* User can add his own implementation to report the file name and line number,
      tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
