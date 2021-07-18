@@ -28,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
 #include "string.h"
+#include "stdlib.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,7 +60,21 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+typedef struct
+{
+	uint8_t a;
+	uint16_t b;
+	uint32_t c;
+	uint32_t *pq;
+}BUFF;
 
+typedef struct
+{
+	BUFF *P;
+	uint8_t i;
+}BUUF1;
+//BUUF1 buff1;
+int A[3]={1,2,3};
 /* USER CODE END 0 */
 
 /**
@@ -95,6 +110,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim3);
   HAL_UART_Receive_IT(&huart1, ar_uart1_buf, 1);
+	
+//	buff=&buf;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -104,7 +122,26 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+			BUUF1  *buff;
+  buff = (BUUF1*)malloc(sizeof(BUUF1));
+	buff->P = (BUFF*)malloc(sizeof(BUFF));
+	buff->P->a =A[0];
+	buff->P->b =A[1];
+	buff->P->c =A[2];
+	(buff->P->pq) = (uint32_t*)&A[0];
+	buff->i = A[0];
     UART1_ReceiveHandle(ar_uart1_protocol_buf);
+		printf("%p,%d\r\n",&buff->P->a,buff->P->a);
+			printf("%p,%d\r\n",&buff->P->b,buff->P->b);
+			printf("%p,%d\r\n",&buff->P->c,buff->P->c);
+		printf("%p,%d\r\n",&buff->P->pq,(*buff->P->pq));
+		printf("%p\r\n",buff);
+		printf("%p,%d\r\n",&buff->i,buff->i);
+		printf("%d\r\n",sizeof(BUFF));
+		//HAL_UART_Transmit(&huart1,(uint8_t*)"test1\r\n",sizeof("test1\r\n"),0XFFFF);
+		HAL_Delay(100);
+		free(buff); 
+		free(buff->P);
   }
   /* USER CODE END 3 */
 }
